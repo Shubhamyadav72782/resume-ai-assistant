@@ -1,0 +1,24 @@
+ venu
+
+ all project same packages
+
+ A > Flask 2
+ B Flask 3
+
+ with view
+
+
+module library
+ pip install flask  this for we can create a web application .to create pages router etc
+ sqlalchemy for database handling
+ pymsql isko hm mainly tini se connect kr sake
+  openai  for ai ko integrate kar sake
+pyPDF2 user apna existing resume daalega to us resume ko read karne ke liye ye library hain
+python-doc ye jab doc main file upload karega uske liye hain
+
+
+
+STEPS
+
+1-- setup
+2-- database connection

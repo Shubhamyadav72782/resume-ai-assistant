@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Your History</h2>
+
+{% if reports %}
+
+    {% for r in reports %}
+
+    {% set result = r.result %}
+
+    <div class="card">
+
+        <h3>Resume Preview</h3>
+
+        <p>{{ r.resume_text[:150] }}{% if r.resume_text|length > 150 %}...{% endif %}</p>
+
+        <hr>
+
+        <h3>Skills</h3>
+        <ul>
+            {% for s in result.get("skills", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Missing Skills</h3>
+        <ul>
+            {% for s in result.get("missing_skills", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Roadmap</h3>
+        <ul>
+            {% for s in result.get("roadmap", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Interview Questions</h3>
+        <ul>
+            {% for s in result.get("interview_questions", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <br>
+
+    {% endfor %}
+
+{% else %}
+
+<div class="card">
+    <h3>No History Found</h3>
+    <p>You have not analyzed any resume yet.</p>
+</div>
+
+{% endif %}
+
+{% endblock %}
